@@ -10,7 +10,7 @@ namespace Database
 {
     public class ProductsManager
     {
-        public ProductContext ProductContext { get; set; }
+        internal ProductContext ProductContext { get; set; }
         public ProductsManager()
         {
             ProductContext = new ProductContext();
