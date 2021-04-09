@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProductsFinder"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="342" Width="625">
     <Grid>
+        <Label x:Name="label" Content="Products Finder" HorizontalAlignment="Left" Margin="240,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Numer modelu" HorizontalAlignment="Left" Margin="28,62,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Content="Addon 1" HorizontalAlignment="Left" Margin="28,112,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label4" Content="Addon 2" HorizontalAlignment="Left" Margin="28,162,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label5" Content="Addon 3" HorizontalAlignment="Left" Margin="28,212,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label6" Content="Addon 4" HorizontalAlignment="Left" Margin="28,262,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="modelNumberTextbox" HorizontalAlignment="Left" Margin="187,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227"/>
+        <TextBox x:Name="addon1Textbox" HorizontalAlignment="Left" Margin="187,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227"/>
+        <TextBox x:Name="addon2Textbox" HorizontalAlignment="Left" Margin="187,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227"/>
+        <TextBox x:Name="addon3Textbox" HorizontalAlignment="Left" Margin="187,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227"/>
+        <TextBox x:Name="addon4Textbox" HorizontalAlignment="Left" Margin="187,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227"/>
+        <Button x:Name="searchByNumberButton" Content="Szukaj po numerze" HorizontalAlignment="Left" Margin="463,62,0,0" VerticalAlignment="Top" Width="111" Click="searchByNumberButton_Click"/>
+        <Button x:Name="searchByAddonButton" Content="Szukaj po addon" HorizontalAlignment="Left" Margin="463,112,0,0" VerticalAlignment="Top" Width="111" Click="searchByAddonButton_Click"/>
 
     </Grid>
 </Window>

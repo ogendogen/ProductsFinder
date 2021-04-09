@@ -27,5 +27,15 @@ namespace ProductsFinder
             ProductsManager = new ProductsManager();
             InitializeComponent();
         }
+
+        private void searchByNumberButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void searchByAddonButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
