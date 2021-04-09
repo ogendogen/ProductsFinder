@@ -13,6 +13,11 @@ namespace Database
     {
         public DbSet<Product> Products { get; set; }
 
+        public ProductContext()
+        {
+
+        }
+
         public ProductContext(DbContextOptions options) : base(options)
         {
 

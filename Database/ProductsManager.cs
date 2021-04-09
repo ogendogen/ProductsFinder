@@ -13,7 +13,8 @@ namespace Database
         public ProductContext ProductContext { get; set; }
         public ProductsManager()
         {
-
+            ProductContext = new ProductContext();
+            ProductContext.Database.EnsureCreated();
         }
 
         public async Task<Product> GetProductByNumber(int number)
