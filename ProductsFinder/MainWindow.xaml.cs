@@ -28,9 +28,29 @@ namespace ProductsFinder
             InitializeComponent();
         }
 
-        private void searchByNumberButton_Click(object sender, RoutedEventArgs e)
+        private async void searchByNumberButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            string modelNumber = modelNumberTextbox.Text;
+            if (String.IsNullOrEmpty(modelNumber))
+            {
+                MessageBox.Show("Numer modelu jest pusty!", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
+            if (!Int32.TryParse(modelNumber, out int i_modelNumber))
+            {
+                MessageBox.Show("Numer modelu nie jest liczbą!", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            var product = await ProductsManager.GetProductByNumber(i_modelNumber);
+            if (product == null)
+            {
+                MessageBox.Show("Nie znaleziono produktu", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
+            // open window with full details of product
         }
 
         private void searchByAddonButton_Click(object sender, RoutedEventArgs e)
