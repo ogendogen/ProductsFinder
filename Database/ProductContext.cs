@@ -12,7 +12,6 @@ namespace Database
     public class ProductContext : DbContext
     {
         public DbSet<Product> Products { get; set; }
-        public DbSet<User> Users { get; set; }
 
         public ProductContext(DbContextOptions options) : base(options)
         {
@@ -41,17 +40,6 @@ namespace Database
                 entity.Property(e => e.Addon3).IsRequired().HasMaxLength(128);
                 entity.Property(e => e.Addon4).IsRequired().HasMaxLength(128);
             });
-
-            modelBuilder.Entity<User>(entity =>
-            {
-                entity.Property(e => e.UserId).ValueGeneratedOnAdd();
-                entity.HasKey(e => e.UserId);
-
-                entity.Property(e => e.Login).IsRequired().HasMaxLength(32);
-                entity.Property(e => e.IsAdmin).IsRequired();
-            });
-
-            base.OnModelCreating(modelBuilder);
         }
     }
 }
