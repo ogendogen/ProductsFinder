@@ -53,9 +53,34 @@ namespace ProductsFinder
             // open window with full details of product
         }
 
-        private void searchByAddonButton_Click(object sender, RoutedEventArgs e)
+        private async void searchByAddonButton_Click(object sender, RoutedEventArgs e)
         {
+            int addonNumber = 0;
+            string addonContent = "";
+            if (!String.IsNullOrEmpty(addon1Textbox.Text))
+            {
+                addonNumber = 1;
+                addonContent = addon1Textbox.Text;
+            }
+            else if (!String.IsNullOrEmpty(addon2Textbox.Text))
+            {
+                addonNumber = 2;
+                addonContent = addon2Textbox.Text;
+            }
+            else if (!String.IsNullOrEmpty(addon3Textbox.Text))
+            {
+                addonNumber = 3;
+                addonContent = addon3Textbox.Text;
+            }
+            else if (!String.IsNullOrEmpty(addon4Textbox.Text))
+            {
+                addonNumber = 4;
+                addonContent = addon4Textbox.Text;
+            }
 
+            var productsList = await ProductsManager.GetProductsByAddon(addonContent, addonNumber);
+
+            // open window with list of matched products
         }
     }
 }
