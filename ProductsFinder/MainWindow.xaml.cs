@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,8 +21,10 @@ namespace ProductsFinder
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ProductsManager ProductsManager { get; set; }
         public MainWindow()
         {
+            ProductsManager = new ProductsManager();
             InitializeComponent();
         }
     }
