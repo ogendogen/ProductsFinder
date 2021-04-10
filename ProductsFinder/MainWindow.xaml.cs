@@ -50,7 +50,8 @@ namespace ProductsFinder
                 return;
             }
 
-            // open window with full details of product
+            DetailsWindow detailsWindow = new DetailsWindow(product);
+            detailsWindow.ShowDialog();
         }
 
         private async void searchByAddonButton_Click(object sender, RoutedEventArgs e)
@@ -80,7 +81,8 @@ namespace ProductsFinder
 
             var productsList = await ProductsManager.GetProductsByAddon(addonContent, addonNumber);
 
-            // open window with list of matched products
+            ListWindow listWindow = new ListWindow(productsList);
+            listWindow.Show();
         }
     }
 }
