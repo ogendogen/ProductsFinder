@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProductsFinder"
         mc:Ignorable="d"
-        Title="ListWindow" Height="450" Width="800">
+        Title="ListWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        
+        <DataGrid x:Name="ProductsGrid" AutoGenerateColumns="False" Margin="0,0,0,0" CanUserAddRows="False" CanUserDeleteRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nazwa produktu" IsReadOnly="True" Binding="{Binding ProductName}"/>
+                <DataGridTextColumn Header="Numer modelu" IsReadOnly="True" Binding="{Binding ProductNumber}"/>
+                <DataGridTextColumn Header="Addon1" IsReadOnly="True" Binding="{Binding Addon1}"/>
+                <DataGridTextColumn Header="Addon2" IsReadOnly="True" Binding="{Binding Addon2}"/>
+                <DataGridTextColumn Header="Addon3" IsReadOnly="True" Binding="{Binding Addon3}"/>
+                <DataGridTextColumn Header="Addon4" IsReadOnly="True" Binding="{Binding Addon4}"/>
+                <DataGridTextColumn Header="Uwagi" IsReadOnly="True" Binding="{Binding Remarks}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

@@ -20,9 +20,16 @@ namespace ProductsFinder
     /// </summary>
     public partial class ListWindow : Window
     {
+        public IEnumerable<Product> ProductsList { get; }
         public ListWindow(IEnumerable<Product> productsList)
         {
             InitializeComponent();
+            ProductsList = productsList;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            ProductsGrid.ItemsSource = ProductsList;
         }
     }
 }
