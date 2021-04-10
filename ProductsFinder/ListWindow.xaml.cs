@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Database.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace ProductsFinder
     /// </summary>
     public partial class ListWindow : Window
     {
-        public ListWindow()
+        public ListWindow(IEnumerable<Product> productsList)
         {
             InitializeComponent();
         }
