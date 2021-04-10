@@ -31,5 +31,14 @@ namespace ProductsFinder
         {
             ProductsGrid.ItemsSource = ProductsList;
         }
+
+        private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            DataGridRow dataGridRow = (DataGridRow)sender;
+            Product product = (Product)dataGridRow.DataContext;
+
+            DetailsWindow detailsWindow = new DetailsWindow(product);
+            detailsWindow.Show();
+        }
     }
 }
