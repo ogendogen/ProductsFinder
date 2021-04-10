@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProductsFinder"
         mc:Ignorable="d"
-        Title="DetailsWindow" Height="450" Width="800">
+        Title="DetailsWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        
+        <Label x:Name="label" Content="Nazwa produktu" HorizontalAlignment="Left" Margin="179,31,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="productNameTextBox" HorizontalAlignment="Left" Margin="162,62,0,0" Text="{Binding Path=ProductName}" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" IsReadOnly="True"/>
+        <Label x:Name="label_Copy" Content="Numer modelu" HorizontalAlignment="Left" Margin="482,31,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="productNumberTextBox" HorizontalAlignment="Left" Margin="457,62,0,0" Text="{Binding Path=ProductNumber}" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" IsReadOnly="True"/>
+        <Label x:Name="label_Copy1" Content="Addon4" HorizontalAlignment="Left" Margin="620,134,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="addon4TextBox" HorizontalAlignment="Left" Margin="593,165,0,0" Text="{Binding Path=Addon4}" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" IsReadOnly="True"/>
+        <Label x:Name="label_Copy2" Content="Addon1" HorizontalAlignment="Left" Margin="67,134,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="addon1TextBox" HorizontalAlignment="Left" Margin="21,165,0,0" Text="{Binding Path=Addon1}" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" IsReadOnly="True"/>
+        <Label x:Name="label_Copy3" Content="Addon2" HorizontalAlignment="Left" Margin="234,134,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="addon2TextBox" HorizontalAlignment="Left" Margin="206,165,0,0" Text="{Binding Path=Addon2}" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" IsReadOnly="True"/>
+        <Label x:Name="label_Copy4" Content="Addon3" HorizontalAlignment="Left" Margin="426,134,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="addon3TextBox" HorizontalAlignment="Left" Margin="400,165,0,0" Text="{Binding Path=Addon3}" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" IsReadOnly="True"/>
+        <Label x:Name="label1" Content="Uwagi" HorizontalAlignment="Left" Margin="348,241,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="remarksTextBox" HorizontalAlignment="Left" Margin="67,272,0,0" Text="{Binding Path=Remarks}" TextWrapping="Wrap" VerticalAlignment="Top" Width="637" Height="87" IsReadOnly="True" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
+
     </Grid>
 </Window>

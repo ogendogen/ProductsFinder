@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Database.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,16 @@ namespace ProductsFinder
     /// </summary>
     public partial class DetailsWindow : Window
     {
-        public DetailsWindow()
+        public Product Product { get; }
+        public DetailsWindow(Product product)
         {
+            Product = product;
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataContext = Product;
         }
     }
 }
