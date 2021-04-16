@@ -44,7 +44,7 @@ namespace Database
                 entity.Property(e => e.ProductNumber).IsRequired();
                 entity.HasIndex(e => e.ProductNumber).IsUnique();
                 
-                entity.Property(e => e.Tag).IsRequired().HasMaxLength(128);
+                entity.Property(e => e.Tag).HasMaxLength(128);
                 entity.HasIndex(e => e.Tag).IsUnique();
 
                 entity.Property(e => e.Addon1).HasMaxLength(128);
