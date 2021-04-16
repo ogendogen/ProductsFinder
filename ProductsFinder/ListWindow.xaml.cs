@@ -37,6 +37,20 @@ namespace ProductsFinder
             DataGridRow dataGridRow = (DataGridRow)sender;
             Product product = (Product)dataGridRow.DataContext;
 
+            ShowProductFromRow(product);
+        }
+
+        private void ProductsGrid_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                Product product = (Product)ProductsGrid.SelectedItem;
+                ShowProductFromRow(product);
+            }
+        }
+
+        private static void ShowProductFromRow(Product product)
+        {
             DetailsWindow detailsWindow = new DetailsWindow(product);
             detailsWindow.Show();
         }
