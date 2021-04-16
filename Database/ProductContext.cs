@@ -39,7 +39,13 @@ namespace Database
                 entity.HasKey(e => e.ProductId);
 
                 entity.Property(e => e.ProductName).IsRequired().HasMaxLength(128);
+                
                 entity.Property(e => e.ProductNumber).IsRequired();
+                entity.HasIndex(e => e.ProductNumber).IsUnique();
+                
+                entity.Property(e => e.Tag).IsRequired();
+                entity.HasIndex(e => e.Tag).IsUnique();
+
                 entity.Property(e => e.Addon1).IsRequired().HasMaxLength(128);
                 entity.Property(e => e.Addon2).IsRequired().HasMaxLength(128);
                 entity.Property(e => e.Addon3).IsRequired().HasMaxLength(128);
