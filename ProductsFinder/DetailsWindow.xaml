@@ -21,7 +21,7 @@
         <TextBox x:Name="addon3TextBox" HorizontalAlignment="Left" Margin="400,165,0,0" Text="{Binding Path=Addon3}" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" IsReadOnly="True"/>
         <Label x:Name="label1" Content="Uwagi" HorizontalAlignment="Left" Margin="348,241,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="remarksTextBox" HorizontalAlignment="Left" Margin="67,272,0,0" Text="{Binding Path=Remarks}" TextWrapping="Wrap" VerticalAlignment="Top" Width="637" Height="87" IsReadOnly="True" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
-        <Label x:Name="label_Copy5" Content="Tag" HorizontalAlignment="Left" Margin="561,37,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy5" Content="Nazwa skrócona" HorizontalAlignment="Left" Margin="527,37,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="productNumberTextBox_Copy" HorizontalAlignment="Left" Margin="505,68,0,0" Text="{Binding Tag}" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" IsReadOnly="True"/>
 
     </Grid>
