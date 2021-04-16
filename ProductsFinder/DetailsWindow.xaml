@@ -1,0 +1,28 @@
+﻿<Window x:Class="ProductsFinder.DetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProductsFinder"
+        mc:Ignorable="d"
+        Title="Szczegóły" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Label x:Name="label" Content="Nazwa turbosprężarki" HorizontalAlignment="Left" Margin="130,37,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="productNameTextBox" HorizontalAlignment="Left" Margin="122,68,0,0" Text="{Binding Path=ProductName}" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" IsReadOnly="True"/>
+        <Label x:Name="label_Copy" Content="Numer turbosprężarki" HorizontalAlignment="Left" Margin="322,37,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="productNumberTextBox" HorizontalAlignment="Left" Margin="315,68,0,0" Text="{Binding Path=ProductNumber}" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" IsReadOnly="True"/>
+        <Label x:Name="label_Copy1" Content="Nasadka" HorizontalAlignment="Left" Margin="620,134,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="addon4TextBox" HorizontalAlignment="Left" Margin="593,165,0,0" Text="{Binding Path=Addon4}" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" IsReadOnly="True"/>
+        <Label x:Name="label_Copy2" Content="Tarcza" HorizontalAlignment="Left" Margin="67,134,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="addon1TextBox" HorizontalAlignment="Left" Margin="21,165,0,0" Text="{Binding Path=Addon1}" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" IsReadOnly="True"/>
+        <Label x:Name="label_Copy3" Content="Lokalizacja tarczy" HorizontalAlignment="Left" Margin="226,134,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="addon2TextBox" HorizontalAlignment="Left" Margin="206,165,0,0" Text="{Binding Path=Addon2}" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" IsReadOnly="True"/>
+        <Label x:Name="label_Copy4" Content="Króciec olejowy" HorizontalAlignment="Left" Margin="426,134,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="addon3TextBox" HorizontalAlignment="Left" Margin="400,165,0,0" Text="{Binding Path=Addon3}" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" IsReadOnly="True"/>
+        <Label x:Name="label1" Content="Uwagi" HorizontalAlignment="Left" Margin="348,241,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="remarksTextBox" HorizontalAlignment="Left" Margin="67,272,0,0" Text="{Binding Path=Remarks}" TextWrapping="Wrap" VerticalAlignment="Top" Width="637" Height="87" IsReadOnly="True" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
+        <Label x:Name="label_Copy5" Content="Tag" HorizontalAlignment="Left" Margin="561,37,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="productNumberTextBox_Copy" HorizontalAlignment="Left" Margin="505,68,0,0" Text="{Binding Tag}" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" IsReadOnly="True"/>
+
+    </Grid>
+</Window>
