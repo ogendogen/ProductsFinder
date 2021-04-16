@@ -41,6 +41,45 @@ namespace ProductsFinder
 
         private async void searchByNumberButton_Click(object sender, RoutedEventArgs e)
         {
+            await SearchByModelNumber();
+        }
+
+        private async void searchByTagButton_Click(object sender, RoutedEventArgs e)
+        {
+            await SearchByTag();
+        }
+
+        private async void searchByAddonButton_Click(object sender, RoutedEventArgs e)
+        {
+            await SearchByAddon();
+        }
+
+        private async void modelNumberTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                await SearchByModelNumber();
+            }
+        }
+
+        private async void tagTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                await SearchByTag();
+            }
+        }
+
+        private async void addonTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                await SearchByAddon();
+            }
+        }
+
+        private async Task SearchByModelNumber()
+        {
             string modelNumber = modelNumberTextbox.Text;
             if (String.IsNullOrEmpty(modelNumber))
             {
@@ -59,7 +98,7 @@ namespace ProductsFinder
             detailsWindow.ShowDialog();
         }
 
-        private async void searchByTagButton_Click(object sender, RoutedEventArgs e)
+        private async Task SearchByTag()
         {
             string tag = tagTextbox.Text;
             if (String.IsNullOrEmpty(tag))
@@ -79,7 +118,7 @@ namespace ProductsFinder
             detailsWindow.ShowDialog();
         }
 
-        private async void searchByAddonButton_Click(object sender, RoutedEventArgs e)
+        private async Task SearchByAddon()
         {
             var selectedItem = addonsComboBox.SelectedItem;
             if (selectedItem == null)

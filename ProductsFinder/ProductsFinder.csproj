@@ -4,7 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon>power2.ico</ApplicationIcon>
+    <ApplicationIcon>ikona3.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
