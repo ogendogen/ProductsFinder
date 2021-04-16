@@ -10,7 +10,8 @@ namespace Database.Models
     {
         public int ProductId { get; set; }
         public string ProductName { get; set; }
-        public int ProductNumber { get; set; }
+        public string ProductNumber { get; set; }
+        public string Tag { get; set; }
         public string Addon1 { get; set; }
         public string Addon2 { get; set; }
         public string Addon3 { get; set; }

@@ -17,9 +17,14 @@ namespace Database
             ProductContext.Database.EnsureCreated();
         }
 
-        public async Task<Product> GetProductByNumber(int number)
+        public async Task<Product> GetProductByNumber(string number)
         {
             return await ProductContext.Products.FirstOrDefaultAsync(product => product.ProductNumber == number);
+        }
+
+        public async Task<Product> GetProductByTag(string tag)
+        {
+            return await ProductContext.Products.FirstOrDefaultAsync(product => product.Tag == tag);
         }
 
         public async Task<IEnumerable<Product>> GetProductsByAddon(string addonContent, int addonNumber)

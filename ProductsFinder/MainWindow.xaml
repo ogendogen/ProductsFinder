@@ -5,21 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProductsFinder"
         mc:Ignorable="d"
-        Title="MainWindow" Height="342" Width="625">
+        Title="Wyważarka AIO" Height="247" Width="693">
     <Grid>
-        <Label x:Name="label" Content="Products Finder" HorizontalAlignment="Left" Margin="240,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label2" Content="Numer modelu" HorizontalAlignment="Left" Margin="28,62,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label3" Content="Addon 1" HorizontalAlignment="Left" Margin="28,112,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label4" Content="Addon 2" HorizontalAlignment="Left" Margin="28,162,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label5" Content="Addon 3" HorizontalAlignment="Left" Margin="28,212,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label6" Content="Addon 4" HorizontalAlignment="Left" Margin="28,262,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="modelNumberTextbox" HorizontalAlignment="Left" Margin="187,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227"/>
-        <TextBox x:Name="addon1Textbox" HorizontalAlignment="Left" Margin="187,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227"/>
-        <TextBox x:Name="addon2Textbox" HorizontalAlignment="Left" Margin="187,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227"/>
-        <TextBox x:Name="addon3Textbox" HorizontalAlignment="Left" Margin="187,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227"/>
-        <TextBox x:Name="addon4Textbox" HorizontalAlignment="Left" Margin="187,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227"/>
-        <Button x:Name="searchByNumberButton" Content="Szukaj po numerze" HorizontalAlignment="Left" Margin="463,62,0,0" VerticalAlignment="Top" Width="111" Click="searchByNumberButton_Click"/>
-        <Button x:Name="searchByAddonButton" Content="Szukaj po addon" HorizontalAlignment="Left" Margin="463,112,0,0" VerticalAlignment="Top" Width="111" Click="searchByAddonButton_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label x:Name="label" Content="Wyważarka AIO" HorizontalAlignment="Left" Margin="272,10,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Grid.Row="1"/>
+        <Label x:Name="label2" Content="Numer turbosprężarki" HorizontalAlignment="Left" Margin="28,62,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <Label x:Name="label3" Content="Tag" HorizontalAlignment="Left" Margin="28,112,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <Label x:Name="label4" Content="Inny parametr" HorizontalAlignment="Left" Margin="28,162,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <TextBox x:Name="modelNumberTextbox" HorizontalAlignment="Left" Margin="159,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227" Grid.Row="1"/>
+        <TextBox x:Name="tagTextbox" HorizontalAlignment="Left" Margin="159,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227" Grid.Row="1"/>
+        <TextBox x:Name="addonTextbox" HorizontalAlignment="Left" Margin="159,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227" Grid.Row="1"/>
+        <Button x:Name="searchByNumberButton" Content="Szukaj po numerze" HorizontalAlignment="Left" Margin="542,65,0,0" VerticalAlignment="Top" Width="126" Click="searchByNumberButton_Click" Grid.Row="1"/>
+        <Button x:Name="searchByAddonButton" Content="Szukaj po parametrze" HorizontalAlignment="Left" Margin="542,160,0,0" VerticalAlignment="Top" Width="126" Click="searchByAddonButton_Click" Grid.Row="1"/>
+        <ComboBox x:Name="addonsComboBox" HorizontalAlignment="Left" Margin="404,159,0,0" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+        <Button x:Name="searchByTagButton" Content="Szukaj po tagu" HorizontalAlignment="Left" Margin="542,111,0,0" VerticalAlignment="Top" Width="126" Click="searchByTagButton_Click" Grid.Row="1"/>
 
     </Grid>
 </Window>

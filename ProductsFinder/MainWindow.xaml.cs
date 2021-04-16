@@ -1,4 +1,5 @@
 ﻿using Database;
+using ProductsFinder.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,16 @@ namespace ProductsFinder
         {
             ProductsManager = new ProductsManager();
             InitializeComponent();
+
+            AddAddonsToComboBox();
+        }
+
+        private void AddAddonsToComboBox()
+        {
+            addonsComboBox.Items.Add(new Addon() { Id = 1, Name = "Tarcza" });
+            addonsComboBox.Items.Add(new Addon() { Id = 2, Name = "Lokalizacja tarczy" });
+            addonsComboBox.Items.Add(new Addon() { Id = 3, Name = "Króciec olejowy" });
+            addonsComboBox.Items.Add(new Addon() { Id = 4, Name = "Nasadka" });
         }
 
         private async void searchByNumberButton_Click(object sender, RoutedEventArgs e)
@@ -37,13 +48,27 @@ namespace ProductsFinder
                 return;
             }
 
-            if (!Int32.TryParse(modelNumber, out int i_modelNumber))
+            var product = await ProductsManager.GetProductByNumber(modelNumber);
+            if (product == null)
             {
-                MessageBox.Show("Numer modelu nie jest liczbą!", "Błąd", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Nie znaleziono produktu", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
 
-            var product = await ProductsManager.GetProductByNumber(i_modelNumber);
+            DetailsWindow detailsWindow = new DetailsWindow(product);
+            detailsWindow.ShowDialog();
+        }
+
+        private async void searchByTagButton_Click(object sender, RoutedEventArgs e)
+        {
+            string tag = tagTextbox.Text;
+            if (String.IsNullOrEmpty(tag))
+            {
+                MessageBox.Show("Tag jest pusty!", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
+            var product = await ProductsManager.GetProductByTag(tag);
             if (product == null)
             {
                 MessageBox.Show("Nie znaleziono produktu", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -56,28 +81,16 @@ namespace ProductsFinder
 
         private async void searchByAddonButton_Click(object sender, RoutedEventArgs e)
         {
-            int addonNumber = 0;
-            string addonContent = "";
-            if (!String.IsNullOrEmpty(addon1Textbox.Text))
+            var selectedItem = addonsComboBox.SelectedItem;
+            if (selectedItem == null)
             {
-                addonNumber = 1;
-                addonContent = addon1Textbox.Text;
+                MessageBox.Show("Wybierz parametr z listy!", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
             }
-            else if (!String.IsNullOrEmpty(addon2Textbox.Text))
-            {
-                addonNumber = 2;
-                addonContent = addon2Textbox.Text;
-            }
-            else if (!String.IsNullOrEmpty(addon3Textbox.Text))
-            {
-                addonNumber = 3;
-                addonContent = addon3Textbox.Text;
-            }
-            else if (!String.IsNullOrEmpty(addon4Textbox.Text))
-            {
-                addonNumber = 4;
-                addonContent = addon4Textbox.Text;
-            }
+
+            Addon selectedAddon = (Addon)selectedItem;
+            int addonNumber = selectedAddon.Id;
+            string addonContent = addonTextbox.Text;
 
             var productsList = await ProductsManager.GetProductsByAddon(addonContent, addonNumber);
 

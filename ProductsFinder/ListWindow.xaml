@@ -5,17 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProductsFinder"
         mc:Ignorable="d"
-        Title="ListWindow" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="Lista sprężarek" Height="450" Width="900" Loaded="Window_Loaded">
     <Grid>
         <DataGrid x:Name="ProductsGrid" AutoGenerateColumns="False" Margin="0,0,0,0" CanUserAddRows="False" CanUserDeleteRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Nazwa produktu" IsReadOnly="True" Binding="{Binding ProductName}"/>
-                <DataGridTextColumn Header="Numer modelu" IsReadOnly="True" Binding="{Binding ProductNumber}"/>
-                <DataGridTextColumn Header="Addon1" IsReadOnly="True" Binding="{Binding Addon1}"/>
-                <DataGridTextColumn Header="Addon2" IsReadOnly="True" Binding="{Binding Addon2}"/>
-                <DataGridTextColumn Header="Addon3" IsReadOnly="True" Binding="{Binding Addon3}"/>
-                <DataGridTextColumn Header="Addon4" IsReadOnly="True" Binding="{Binding Addon4}"/>
-                <DataGridTextColumn Header="Uwagi" IsReadOnly="True" Binding="{Binding Remarks}"/>
+                <DataGridTextColumn Header="Nazwa produktu" IsReadOnly="True" Binding="{Binding ProductName}" Width="100"/>
+                <DataGridTextColumn Header="Numer turbosprężarki" IsReadOnly="True" Binding="{Binding ProductNumber}" Width="150"/>
+                <DataGridTextColumn Header="Tag" IsReadOnly="True" Binding="{Binding Tag}" CanUserResize="True" Width="100"/>
+                <DataGridTextColumn Header="Tarcza" IsReadOnly="True" Binding="{Binding Addon1}" Width="100"/>
+                <DataGridTextColumn Header="Lokalizacja tarczy" IsReadOnly="True" Binding="{Binding Addon2}" Width="125"/>
+                <DataGridTextColumn Header="Króciec olejowy" IsReadOnly="True" Binding="{Binding Addon3}" Width="100"/>
+                <DataGridTextColumn Header="Nasadka" IsReadOnly="True" Binding="{Binding Addon4}" Width="100"/>
+                <DataGridTextColumn Header="Uwagi" IsReadOnly="True" Binding="{Binding Remarks}" Width="100"/>
             </DataGrid.Columns>
             <DataGrid.ItemContainerStyle>
                 <Style TargetType="DataGridRow">
