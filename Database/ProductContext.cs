@@ -31,6 +31,7 @@ namespace Database
             });
             base.OnConfiguring(optionsBuilder);
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>(entity =>
@@ -43,13 +44,13 @@ namespace Database
                 entity.Property(e => e.ProductNumber).IsRequired();
                 entity.HasIndex(e => e.ProductNumber).IsUnique();
                 
-                entity.Property(e => e.Tag).IsRequired();
+                entity.Property(e => e.Tag).IsRequired().HasMaxLength(128);
                 entity.HasIndex(e => e.Tag).IsUnique();
 
-                entity.Property(e => e.Addon1).IsRequired().HasMaxLength(128);
-                entity.Property(e => e.Addon2).IsRequired().HasMaxLength(128);
-                entity.Property(e => e.Addon3).IsRequired().HasMaxLength(128);
-                entity.Property(e => e.Addon4).IsRequired().HasMaxLength(128);
+                entity.Property(e => e.Addon1).HasMaxLength(128);
+                entity.Property(e => e.Addon2).HasMaxLength(128);
+                entity.Property(e => e.Addon3).HasMaxLength(128);
+                entity.Property(e => e.Addon4).HasMaxLength(128);
             });
         }
     }
